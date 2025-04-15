@@ -1,0 +1,34 @@
+@import url("footer.css"); /*separar o css de cada página, mais fácil*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+* {                 /*reset das bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    background-color: white;
+}
+
+.logo-topo {
+    object-fit: cover;
+    padding: 30px; 
+}
+
+.nav-bar {
+    padding: 30px;
+    
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
