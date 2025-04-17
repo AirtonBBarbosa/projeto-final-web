@@ -1,0 +1,100 @@
+/*SEÇÃO 1*/
+.secao1 h1 {
+    margin-left: 60px;
+    margin-top: 80px;
+}
+
+.secao1 p {
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+.secao1 .img-amostra {
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 130px;
+}
+
+/*FIM*/
+
+/*SEÇÃO2 */
+.secao2 {
+    height: 575px;
+    background-color: #EEEEEE;
+    margin-top: 175px;
+}
+
+.secao2 h2 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.secao2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 270px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+.secao2 .col {
+    width: 300px;
+    font-family: 'Ubuntu Sans';
+    font-weight: 500;
+}
+
+/*FIM*/
+
+/*SEÇÃO 3*/
+
+.secao3 {
+    justify-items: center;
+    height: 550px;
+    margin-top: 40px;
+}
+
+.secao3 div {
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 5px;
+    width: 60rem;
+    height: 60px;
+    margin: 30px;
+}
+
+.secao3 div p {
+    padding: 15px;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.secao3 div p i {
+    cursor: pointer;
+}
+
+.secao3 div #p1 {
+    margin-left: 600px;
+}
+
+.secao3 div #p2 {
+    margin-left: 675px;
+}
+
+.secao3 div #p3 {
+    margin-left: 480px;
+}
+
+.secao3 div #p4 {
+    margin-left: 555px;
+}
+
+.secao3 div #p5 {
+    margin-left: 465px;
+}
+
+/*FIM*/
