@@ -1,0 +1,88 @@
+/*Ubuntu Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    /*reset das bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #e20e0e;
+    overflow-x: hidden;
+}
+
+/*CABECALHO E NAVAR MEIO*/
+
+header {
+    position: absolute;
+    width: 1440px;
+    height: 75px;
+    top: 0px;
+    background: #656ED8;
+}
+
+img {
+    position: absolute;
+    width: 70.11px;
+    height: 58.19px;
+    left: 29px;
+    top: 9px;
+    object-fit: cover;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 70px;
+    list-style: none;
+    margin-top: 25px;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Ubuntu Sans';
+    font-weight: 500;
+}
+/*FIM*/
+
+/*NAVBAR CONTA*/
+.navbar-conta {
+    display: flex;
+    margin-right: 100px;
+    margin-top: -40px;
+    justify-content: end;
+}
+
+.navbar-conta a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-conta ul {
+    list-style: none;
+}
+/*FIM*/
+
+/*SECAO1*/
+
+.secao1 {
+    position: absolute;
+    width: 889px;
+    height: 310px;
+    left: 250px;
+    top: 117px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid black;
+}
