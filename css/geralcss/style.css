@@ -13,76 +13,81 @@
 }
 
 body {
-    background-color: #e20e0e;
-    overflow-x: hidden;
+    background-color: #EEEEEE;
 }
 
-/*CABECALHO E NAVAR MEIO*/
+/*HEADER E NAVBAR's*/
 
 header {
-    position: absolute;
-    width: 1440px;
+    width: 100%;
     height: 75px;
-    top: 0px;
-    background: #656ED8;
+    background-color: #656ED8;
 }
 
-img {
-    position: absolute;
-    width: 70.11px;
-    height: 58.19px;
-    left: 29px;
-    top: 9px;
-    object-fit: cover;
+header a img {
+    margin-left: 8px;
+    margin-top: 5px;
 }
 
 .nav-bar {
     display: flex;
     justify-content: center;
+    margin-top: -35px;
+    font-family: 'Ubuntu Sans';
+    font-weight: 500;
 }
 
 .nav-bar ul {
     display: flex;
-    gap: 70px;
     list-style: none;
-    margin-top: 25px;
+    gap: 70px;
 }
 
 .nav-bar a {
-    color: white;
     text-decoration: none;
-    font-family: 'Ubuntu Sans';
-    font-weight: 500;
+    color: white;
 }
-/*FIM*/
 
-/*NAVBAR CONTA*/
 .navbar-conta {
     display: flex;
-    margin-right: 100px;
-    margin-top: -40px;
     justify-content: end;
 }
 
-.navbar-conta a {
-    color: white;
-    text-decoration: none;
+.navbar-conta ul {
+    display: flex;
+    list-style: none;
+    margin-top: -45px;
+    margin-right: 20px;
 }
 
-.navbar-conta ul {
-    list-style: none;
+nav img {
+    color: white;
+    object-fit: cover;
+    width: 25px;
 }
+
 /*FIM*/
 
-/*SECAO1*/
-
 .secao1 {
-    position: absolute;
+    margin-top: 40px;
+}
+
+.dashboard {
+    justify-content: left;
+    flex-direction: row;
+    display: flex;
     width: 889px;
     height: 310px;
-    left: 250px;
-    top: 117px;
     background-color: white;
+    align-items: center;
+    margin-left: 230px;
+    gap: 40px;
     border-radius: 20px;
-    border: 1px solid black;
 }
+
+.dashboard img {
+    object-fit: cover;
+    width: 40px;
+}
+
+
