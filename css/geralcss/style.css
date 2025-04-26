@@ -14,6 +14,8 @@
 
 body {
     background-color: #EEEEEE;
+    overflow-x: hidden;
+    
 }
 
 /*HEADER E NAVBAR's*/
@@ -46,6 +48,13 @@ header a img {
 .nav-bar a {
     text-decoration: none;
     color: white;
+    padding-bottom: 5px; /* Espaço para a linha */
+    transition: border 0.3s;
+    border-bottom: 2px solid transparent; /* invisível por padrão */
+}
+
+.nav-bar a:hover {
+    border-bottom: 2px solid white; /* Aparece no hover */
 }
 
 .navbar-conta {
@@ -68,12 +77,13 @@ nav img {
 
 /*FIM*/
 
+/*SEÇÃO 1*/
+
 .secao1 {
     margin-top: 40px;
 }
 
 .dashboard {
-    justify-content: left;
     flex-direction: row;
     display: flex;
     width: 889px;
@@ -85,9 +95,125 @@ nav img {
     border-radius: 20px;
 }
 
+.dashboard h2 {
+    margin-top: -100px;
+    margin-left: 70px;
+    font-family: 'Ubuntu Sans';
+    font-weight: 400;
+}
+
 .dashboard img {
     object-fit: cover;
     width: 40px;
+    margin-top: -110px;
 }
 
+.receitas {
+    justify-content: left;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-left: 310px;
+    gap: 40px;
+    margin-top: -160px;
+    font-size: 20px;
+    font-weight: 400;
+}
 
+.valores {
+    justify-content: left;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    gap: 40px;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.valores .valor-receita {
+    color: #656ED8;
+}
+
+.valores .valor-despesa {
+    color: #E33F3F;
+}
+
+.dashboard2 h2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 380px;
+    margin-top: -150px;
+}
+
+.botoes-dash {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 380px;
+    gap: 50px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.botoes-dash .btn-despesa {
+    color: #E33F3F;
+}
+
+.botoes-dash .btn-receita {
+    color: #656ED8;
+}
+
+/*FIM*/
+
+/*SEÇÃO 2*/
+
+.secao2 {
+    display: flex;
+    margin-top: 140px;
+}
+
+.grafico-geral {
+    display: flex;
+    width: 889px;
+    height: 410px;
+    background-color: white;
+    align-items: center;
+    margin-left: 230px;
+    gap: 40px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.infos-gerais h3 {
+    margin-top: -150px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.infos-gerais .valor-geral {
+    margin-top: -35px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 170px;
+}
+
+.infos-gerais2 {
+    justify-content: center;
+}
+
+.infos-gerais2 h3 {
+    font-weight: 400;
+    margin-top: -35px;
+    margin-left: 100px;  
+    font-size: 25px; 
+}
+
+.infos-gerais2 img {
+    object-fit: cover;
+    height: 180px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
