@@ -57,44 +57,50 @@
     margin-top: 40px;
 }
 
-.secao3 div {
-    border: 1px solid rgb(187, 187, 187);
-    border-radius: 5px;
-    width: 60rem;
-    height: 60px;
-    margin: 30px;
+#p1 {
+    margin-left: 750px;
+    margin-top: -1.2rem;
+    transition: transform 0.3s ease;
 }
 
-.secao3 div p {
-    padding: 15px;
-    font-size: 18px;
-    color: black;
-    font-weight: 500;
+
+
+details {
+    margin-top: 40px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 0.5em 0.5em 0;
+    width: 50rem;
     cursor: pointer;
 }
 
-.secao3 div p i {
+summary {
+    display: flex;
+    font-family: 'Ubuntu Sans';
+    font-weight: 600;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    list-style: none;
     cursor: pointer;
 }
 
-.secao3 div #p1 {
-    margin-left: 600px;
+summary p {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
 }
 
-.secao3 div #p2 {
-    margin-left: 675px;
+details[open] {
+    border: none;
+    padding: 0.5em;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    font-weight: 400;
+    background-color: #EEEEEE;
+    cursor: pointer;
 }
 
-.secao3 div #p3 {
-    margin-left: 480px;
-}
-
-.secao3 div #p4 {
-    margin-left: 555px;
-}
-
-.secao3 div #p5 {
-    margin-left: 465px;
+details[open] summary {
+    margin-bottom: 1.5em;
 }
 
 /*FIM*/
