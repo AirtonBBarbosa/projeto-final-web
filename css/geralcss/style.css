@@ -159,10 +159,12 @@ nav img {
 
 .botoes-dash .btn-despesa {
     color: #E33F3F;
+    cursor: pointer;
 }
 
 .botoes-dash .btn-receita {
     color: #656ED8;
+    cursor: pointer;
 }
 
 /*FIM*/
