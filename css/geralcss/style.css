@@ -96,19 +96,19 @@ nav img {
 }
 
 .dashboard h2 {
-    margin-top: -100px;
-    margin-left: 70px;
+    margin-left: 170px;
     font-family: 'Ubuntu Sans';
     font-weight: 400;
+    font-size: 25px;
 }
 
 .dashboard img {
     object-fit: cover;
     width: 40px;
-    margin-top: -110px;
+    margin-top: -20px;
 }
 
-.receitas {
+/* .receitas {
     justify-content: left;
     flex-direction: row;
     display: flex;
@@ -138,13 +138,19 @@ nav img {
 
 .valores .valor-despesa {
     color: #E33F3F;
-}
+} */
 
 .dashboard2 h2 {
     display: flex;
     justify-content: flex-end;
-    margin-right: 380px;
-    margin-top: -150px;
+    margin-right: 440px;
+    margin-top: -170px;
+    font-size: 23px;
+}
+
+.dashboard2 h2:hover {
+    color: #656ED8;
+    cursor: pointer;
 }
 
 .botoes-dash {
@@ -173,7 +179,7 @@ nav img {
 
 .secao2 {
     display: flex;
-    margin-top: 140px;
+    margin-top: 180px;
 }
 
 .grafico-geral {
