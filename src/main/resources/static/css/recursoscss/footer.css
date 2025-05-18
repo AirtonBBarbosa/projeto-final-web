@@ -1,0 +1,45 @@
+/*INICIO*/
+footer {
+    justify-items: center;   
+    margin-top: 220px;
+}
+
+footer p {
+    font-family: 'Ubuntu Sans';
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.redes {
+    display: flex;
+    gap: 20px;
+}
+
+.redes a {
+    color: black;
+    text-decoration: none;
+}
+
+.redes a:hover {
+    color: #656ED8; /
+}
+
+.leis {
+    display: flex;
+    gap: 20px;
+    float: inline-end;
+    margin-right: 20px;
+    margin-top: -45px;
+}
+
+.leis a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.leis a:hover {
+    color: #656ED8;
+}
+
+/*FIM*/

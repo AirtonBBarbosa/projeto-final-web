@@ -1,0 +1,227 @@
+/*Ubuntu Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    /*reset das bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #EEEEEE;
+    overflow-x: hidden;
+    
+}
+
+/*HEADER E NAVBAR's*/
+
+header {
+    width: 100%;
+    height: 75px;
+    background-color: #656ED8;
+}
+
+header a img {
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: -35px;
+    font-family: 'Ubuntu Sans';
+    font-weight: 500;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 70px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 5px; /* Espaço para a linha */
+    transition: border 0.3s;
+    border-bottom: 2px solid transparent; /* invisível por padrão */
+}
+
+.nav-bar a:hover {
+    border-bottom: 2px solid white; /* Aparece no hover */
+}
+
+.navbar-conta {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-conta ul {
+    display: flex;
+    list-style: none;
+    margin-top: -45px;
+    margin-right: 20px;
+}
+
+nav img {
+    color: white;
+    object-fit: cover;
+    width: 25px;
+}
+
+/*FIM*/
+
+/*SEÇÃO 1*/
+
+.secao1 {
+    margin-top: 40px;
+}
+
+.dashboard {
+    flex-direction: row;
+    display: flex;
+    width: 889px;
+    height: 310px;
+    background-color: white;
+    align-items: center;
+    margin-left: 230px;
+    gap: 40px;
+    border-radius: 20px;
+}
+
+.dashboard h2 {
+    margin-left: 170px;
+    font-family: 'Ubuntu Sans';
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.dashboard img {
+    object-fit: cover;
+    width: 40px;
+    margin-top: -20px;
+}
+
+/* .receitas {
+    justify-content: left;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-left: 310px;
+    gap: 40px;
+    margin-top: -160px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.valores {
+    justify-content: left;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    gap: 40px;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.valores .valor-receita {
+    color: #656ED8;
+}
+
+.valores .valor-despesa {
+    color: #E33F3F;
+} */
+
+.dashboard2 h2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 440px;
+    margin-top: -170px;
+    font-size: 23px;
+}
+
+.dashboard2 h2:hover {
+    color: #656ED8;
+    cursor: pointer;
+}
+
+.botoes-dash {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 380px;
+    gap: 50px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.botoes-dash .btn-despesa {
+    color: #E33F3F;
+    cursor: pointer;
+}
+
+.botoes-dash .btn-receita {
+    color: #656ED8;
+    cursor: pointer;
+}
+
+/*FIM*/
+
+/*SEÇÃO 2*/
+
+.secao2 {
+    display: flex;
+    margin-top: 180px;
+}
+
+.grafico-geral {
+    display: flex;
+    width: 889px;
+    height: 410px;
+    background-color: white;
+    align-items: center;
+    margin-left: 230px;
+    gap: 40px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.infos-gerais h3 {
+    margin-top: -150px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.infos-gerais .valor-geral {
+    margin-top: -35px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 170px;
+}
+
+.infos-gerais2 {
+    justify-content: center;
+}
+
+.infos-gerais2 h3 {
+    font-weight: 400;
+    margin-top: -35px;
+    margin-left: 100px;  
+    font-size: 25px; 
+}
+
+.infos-gerais2 img {
+    object-fit: cover;
+    height: 180px;
+    margin-top: 50px;
+    margin-left: 10px;
+}

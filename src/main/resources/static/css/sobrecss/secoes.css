@@ -1,0 +1,29 @@
+/*SEÇÃO 1*/
+.secao1 h2 {
+    margin-left: 180px;
+    margin-top: 40px;
+    font-size: 35px;
+}
+
+.secao1 p {
+    margin-left: 60px;
+    margin-top: 50px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.secao1 ul {
+    margin-left: 60px;
+    font-weight: 500;
+}
+
+.secao1 .img-amostra {
+    object-fit: cover;
+    position: absolute;
+    right: 15px;
+    top: 130px;
+    width: 35%;
+}
+
+
+/*FIM*/
