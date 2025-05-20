@@ -1,0 +1,110 @@
+/*Separar o css de cada página, mais fácil*/
+/*Ubuntu Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    /*reset das bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #EEEEEE;
+    overflow-x: hidden;
+}
+
+.logo-topo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 50%;
+  margin-top: 15px;
+  height: 500px;
+  justify-self: center;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+section h3 {
+  border: 1.5px solid #B1B1B1;
+  width: 380px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+section h3:hover {
+  border: 1.5px solid #656ED8;
+}
+
+h3 i {
+  color: #656ED8;
+  margin-right: 15px;
+}
+
+section h4 {
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #B1B1B1;
+}
+
+section button {
+  background-color: #656ED8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 140px;
+  height: 40px;
+  align-self: center;
+} 
+
+section button:hover{
+  background-color: rgb(4, 4, 228);
+}
+
+section p {
+  border-bottom: 1px solid #B1B1B1;
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+section p:hover {
+  color: #656ED8;
+}
+
+

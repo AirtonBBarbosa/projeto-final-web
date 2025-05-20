@@ -20,6 +20,15 @@ public class Controlador {
 	public String recursos () {
 		return "recursos";
 	}
+
+	@GetMapping("/login")
+	public String login () {
+		return "login";
+	}
 	
+	@GetMapping("/cadastro")
+	public String cadastro () {
+		return "cadastro";
+	}
 	
 }
