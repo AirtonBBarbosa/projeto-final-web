@@ -22,11 +22,11 @@
         <h2>Acesse sua Conta</h2>
         <h3><i class="bi bi-google"></i>Entre com o Google</h3>
         <h4>ou entre com</h4>
-        <form action="#">
+        <form th:action="@{/logar}" method="post">
             <label for="email">Seu email</label>
             <input type="email" id="email" name="email">
             <label for="password">Sua senha</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="senha">
             <button>Entrar</button>
             <p>Esqueci minha senha?</p>
         </form>

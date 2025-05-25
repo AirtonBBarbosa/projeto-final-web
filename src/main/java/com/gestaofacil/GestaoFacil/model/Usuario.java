@@ -13,13 +13,33 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotEmpty
-	private String nome;
+	// @NotEmpty
+	// private String nome; Não usado no momento
 	
 	@NotEmpty
 	private String email;
 	
 	@NotEmpty
 	private String senha; //senha não está criptografada
+
+	public long getId() {
+		return id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	
 }
