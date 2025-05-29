@@ -29,6 +29,7 @@
             <input type="password" id="password" name="senha">
             <button>Entrar</button>
             <p>Esqueci minha senha?</p>
+            <div th:if="${erro != null}" th:text="${erro}" class="alert alert-danger" role="alert"></div>
         </form>
     </section>
 

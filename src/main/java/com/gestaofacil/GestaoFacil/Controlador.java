@@ -1,5 +1,7 @@
 package com.gestaofacil.GestaoFacil;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gestaofacil.GestaoFacil.model.Usuario;
 import com.gestaofacil.GestaoFacil.repository.UsuarioRepository;
+import com.gestaofacil.servico.CookieServico;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
@@ -27,7 +31,8 @@ public class Controlador {
     }
 
 	@GetMapping("/index")
-	public String index() {
+	public String index(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
+		model.addAttribute("nome", CookieServico.getCookie(request, "nomeUsuario"));
 		return "index";
 	}
 
@@ -47,9 +52,11 @@ public class Controlador {
 	}
 
 	@PostMapping("/logar")
-	public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) {
+	public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) throws UnsupportedEncodingException {
 		Usuario usuariologado = this.ur.login(usuario.getEmail(), usuario.getSenha());
 		if(usuariologado != null) {
+			CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuariologado.getId()), 100000000);
+			CookieServico.setCookie(response, "nomeUsuario", String.valueOf(usuariologado.getEmail()), 3600);
 			return "redirect:/geral";
 		}
 
@@ -64,7 +71,14 @@ public class Controlador {
 	}
 
 	@GetMapping("/geral")
-	public String geral() {
+	public String geral(HttpServletRequest request) throws UnsupportedEncodingException {
+		
+		String id = CookieServico.getCookie(request, "UsuarioId");
+   		 if (id == null) {
+        // cookie não existe ou já expirou: força login
+        return "redirect:/login";
+    	}
+
 		return "geral";
 	}
 
