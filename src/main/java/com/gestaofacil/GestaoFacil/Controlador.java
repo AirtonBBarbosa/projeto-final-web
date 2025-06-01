@@ -72,12 +72,12 @@ public class Controlador {
 
 	@GetMapping("/geral")
 	public String geral(HttpServletRequest request) throws UnsupportedEncodingException {
-		
-		String id = CookieServico.getCookie(request, "UsuarioId");
-   		 if (id == null) {
-        // cookie não existe ou já expirou: força login
-        return "redirect:/login";
-    	}
+		//DESATIVADO POR ENQUANTO PARA TESTES, ESSA FUNÇÃO BLOQUEIA A ROTA E REDIRECIONA PARA O LOGIN
+		// String id = CookieServico.getCookie(request, "UsuarioId");
+   		//  if (id == null) {
+        // // cookie não existe ou já expirou: força login
+        // return "redirect:/login";
+    	// }
 
 		return "geral";
 	}

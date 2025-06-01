@@ -225,3 +225,131 @@ nav img {
     margin-top: 50px;
     margin-left: 10px;
 }
+
+/* MODAL*/
+
+dialog::backdrop { 
+    background-color: rgba(0,0,0,0.5);
+}
+
+dialog {
+    border: none;
+    width: 900px;
+    height: 280px;
+    background-color: #656ED8;
+    color: white;
+    border-radius: 15px;
+    margin-top: 140px;
+    justify-self: center;
+}
+
+.modal-header {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;    
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header input {
+    width: 500px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 8px;
+    text-align: center;
+}
+
+.modal-header input:focus {
+    outline: 2px solid #000a77;
+}
+
+.modal-title {
+    font-size: 20px;
+}
+
+.btn-close-modal {
+    display: flex;
+    justify-self: end;
+    margin-right: 10px;
+}
+
+.btn-close-modal button {
+    margin-top: -115px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+
+}
+
+.btn-close-modal button:hover {
+    color: #e96464;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-body input {
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    width: 300px;
+    border: none;
+    padding: 5px 8px;
+    margin-top: 25px;
+    
+}
+
+/* esconde as setas */
+.modal-body input[type=number]::-webkit-inner-spin-button,
+.modal-body input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal-body input:focus {
+    outline: 2px solid #000a77;
+}
+
+.modal-body label {
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.modal-body select {
+    font-size: 17px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 200px;
+    border: none;
+    padding: 6px 8px;
+    background-color: white;
+}
+
+.modal-body select:focus {
+    outline: 2px solid #000a77;
+}
+
+
+#save-button {
+    margin-left: 350px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 180px;
+    height: 35px;
+    margin-top: 50px;
+}
+
+#save-button:hover {
+    border: 2px solid #000a77;
+}
