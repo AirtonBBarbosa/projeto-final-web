@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Fácil</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/geralcss/style.css">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/graficoscss/graf.css">
+</head>
+
+<body>
+    <header>
+
+        <a href="geral.html"><img src="assets/logobranca.png" alt="gestao-facil"></a>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="geral.html">visão geral</a></li>
+                <li><a href="historico.html">histórico</a></li>
+                <li><a href="graficos.html">gráficos</a></li>
+                <li><a href="relatorios.html">relátorios</a></li>
+            </ul>
+        </nav>
+
+        <nav class="navbar-conta">
+            <ul>
+                <li><a href="#"><img src="assets/PersonCircle.png" alt="icon-pessoa"></a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <div class="chart-header">
+            <h1 id="chartTitle"></h1>
+            <button id="editTitleBtn">Editar Nome</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="controls">
+            <div class="form-group">
+                <label for="newLabel">Descrição:</label>
+                <input type="text" id="newLabel" placeholder="Ex: Conta de Luz">
+            </div>
+            <div class="form-group">
+                <label for="newValue">Valor R$:</label>
+                <input type="number" id="newValue" placeholder="Ex: 250">
+            </div>
+            <div class="form-group">
+                <label for="newTipo">Tipo:</label>
+                <select id="newTipo">
+                    <option value="Casa">Casa</option>
+                    <option value="Poupança">Poupança</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Salário">Salário</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <button id="addValueBtn">Adicionar</button>
+        </div>
+        <a id="voltar" href="/geral">- Voltar e criar um novo gráfico</a>
+
+    </div>
+
+    <!--CRIAÇÃO MODAL-->
+    <dialog id="modal-form">
+
+        <form id="graficoForm" method="dialog">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title">Novo Nome do Gráfico:</h1>
+                <input type="text" id="chart-name" name="chartName" required placeholder="Digite o nome do Gráfico" />
+
+            </div>
+            <div class="btn-close-modal">
+                <button class="close-modal" data-modal="modal-form" type="button"><i
+                        class="bi bi-x-square-fill"></i></button>
+            </div>
+
+            <button id="save-button" type="submit">Salvar</button>
+        </form>
+    </dialog>
+    <!--CRIAÇÃO MODAL-->
+
+    <script>
+        let myChart;
+
+        const dialog = document.getElementById('modal-form');
+        const chartNameInput = document.getElementById('chart-name');
+
+        function addData() {
+            const newLabelInput = document.getElementById('newLabel');
+            const newValueInput = document.getElementById('newValue');
+            const newTipoSelect = document.getElementById('newTipo');
+
+            if (newValueInput.value) {
+                let finalLabel; // Usamos 'let' para poder modificar a variável
+
+                // VERIFICA SE A DESCRIÇÃO FOI PREENCHIDA
+                if (newLabelInput.value) {
+                    // Se SIM, cria o rótulo com "Descrição (Tipo)"
+                    finalLabel = `${newLabelInput.value} (${newTipoSelect.value})`;
+                } else {
+                    // Se NÃO, o rótulo é apenas o "Tipo"
+                    finalLabel = newTipoSelect.value;
+                }
+
+                myChart.data.labels.push(finalLabel);
+                myChart.data.datasets[0].data.push(newValueInput.value);
+                myChart.update();
+
+                // Limpa os campos para a próxima entrada
+                newLabelInput.value = '';
+                newValueInput.value = '';
+            } else {
+                alert("Por favor, insira um valor.");
+            }
+        }
+
+        // Abre o modal e já pré-preenche com o título atual
+        function openEditModal() {
+            const currentTitle = myChart.options.plugins.title.text;
+            chartNameInput.value = currentTitle;
+            dialog.showModal();
+            chartNameInput.focus();
+        }
+
+        // Fecha o modal sem salvar
+        function closeModal() {
+            dialog.close();
+        }
+
+        // Ao submeter o form dentro do dialog, atualiza o título
+        function saveChartTitle(event) {
+            event.preventDefault();
+            const newTitle = chartNameInput.value.trim();
+            if (newTitle) {
+                document.getElementById('chartTitle').innerText = newTitle;
+                myChart.options.plugins.title.text = newTitle;
+                myChart.update();
+            }
+            dialog.close();
+        }
+
+        // 3. TODA A LÓGICA RODA DENTRO DESTE EVENTO
+        window.addEventListener('DOMContentLoaded', () => {
+            // Busca os dados que o formulário salvou
+            const chartName = sessionStorage.getItem('demoChartName') || 'Meu Gráfico';
+            const initialValue = sessionStorage.getItem('demoChartValue') || '0';
+            const initialType = sessionStorage.getItem('demoChartType') || '';
+
+            document.getElementById('chartTitle').innerText = chartName;
+            const ctx = document.getElementById('myChart').getContext('2d');
+
+            // Cria o gráfico usando os dados do sessionStorage
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [initialType],
+                    datasets: [{
+                        label: 'Valor R$',
+                        data: [initialValue],
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: chartName, font: { size: 18 } }
+                    },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+
+
+
+            // Adiciona funcionalidade aos botões
+            document.getElementById('addValueBtn').addEventListener('click', addData);
+
+            document.getElementById('editTitleBtn').addEventListener('click', openEditModal);
+            document.querySelector('.close-modal').addEventListener('click', closeModal);
+            document.getElementById('graficoForm').addEventListener('submit', saveChartTitle);
+
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+/*Separar o css de cada página, mais fácil*/
+/*Ubuntu Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    /*reset das bordas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.chart-container {
+    position: relative; /* Necessário para o Chart.js responsivo */
+    width: 600px;
+    height: 400px;
+    margin: auto; /* Centraliza o gráfico na página */
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#editTitleBtn {
+    border: none;
+    color: white;
+    background-color: #656ED8;
+    border-radius: 14px;
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+#editTitleBtn:hover{
+  background-color: rgb(4, 4, 228);
+}
+
+.chart-header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    gap: 25px;
+}
+
+.form-group input {
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.form-group input:focus{
+    outline: 1.5px solid;
+}
+
+.form-group label {
+    font-size: 18px;
+}
+
+.form-group select {
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.form-group select:focus {
+    outline: 1px solid;
+}
+
+#addValueBtn {
+    border: none;
+    color: white;
+    background-color: #656ED8;
+    border-radius: 14px;
+    width: 100px;
+}
+
+#addValueBtn:hover{
+  background-color: rgb(4, 4, 228);
+}
+
+#voltar {
+    padding-bottom: 30px;
+    text-decoration: none;
+    color: #656ED8;
+}
+
+#voltar:hover {
+    color: rgb(3, 3, 206);
+}
+
+/* esconde as setas */
+.form-group input[type=number]::-webkit-inner-spin-button,
+.form-group input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+dialog .modal-header {
+    margin-top: 80px;
+}
+
+dialog .modal-header input {
+    width: 280px;
+}
+
+dialog .btn-close-modal {
+    margin-top: -50px;
+}
+
+dialog #save-button {
+    margin-top: 70px;
+}
