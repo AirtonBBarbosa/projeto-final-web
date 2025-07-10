@@ -25,5 +25,19 @@
     width: 35%;
 }
 
-
 /*FIM*/
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+
+    .secao1 {
+        margin-left: -20px;
+    }
+
+    .secao1 h2 {
+        margin-top: 55px;
+        margin-left: 95px;
+        font-size: 25px;
+    }
+
+}

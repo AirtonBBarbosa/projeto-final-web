@@ -106,3 +106,47 @@ section p {
 section p:hover {
     color: #656ED8;
 }
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+
+    body {
+        background-color: white;
+    }
+
+    section {
+        width: 100%;
+        margin-top: 30px;
+        height: 600px;
+    }
+
+    h2 {
+        margin-top: -80px;
+    }
+
+    h3 {
+        align-content: center;
+        height: 40px;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+
+    input {
+        width: 380px;
+    }
+
+    input:focus {
+        outline-color: #656ED8;
+    }
+
+    .logo-topo {
+        margin-top: 80px;
+    }
+
+}

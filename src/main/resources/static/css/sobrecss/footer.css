@@ -43,3 +43,19 @@ footer p {
 }
 
 /*FIM*/
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+    .leis {
+        margin-right: 50px;
+        margin-top: -70px;
+    }   
+
+    footer p {
+        margin-top: 45px;
+    }
+
+    footer {
+        margin-top: 3.5rem;
+    }
+}

@@ -6,22 +6,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    /*reset das bordas*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  /*reset das bordas*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #EEEEEE;
-    overflow-x: hidden;
+  background-color: #EEEEEE;
+  overflow-x: hidden;
 }
 
 .logo-topo {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 section {
@@ -90,9 +90,9 @@ section button {
   width: 140px;
   height: 40px;
   align-self: center;
-} 
+}
 
-section button:hover{
+section button:hover {
   background-color: rgb(4, 4, 228);
 }
 
@@ -107,4 +107,48 @@ section p:hover {
   color: #656ED8;
 }
 
+/* RESPONSIVIDADE */
 
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+
+  body {
+    background-color: white;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 30px;
+    height: 600px;
+  }
+
+  h2 {
+    margin-top: -80px;
+  }
+
+  h3 {
+    align-content: center;
+    height: 40px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+
+  input {
+    width: 380px;
+  }
+
+  input:focus {
+    outline-color: #656ED8;
+  }
+
+  .logo-topo {
+    margin-top: 80px;
+  }
+
+}

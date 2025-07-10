@@ -18,7 +18,7 @@
 
 
 .container {
-    display: flex;      
+    display: flex;
 }
 
 .container div {
@@ -32,5 +32,62 @@
     margin-left: 90px;
 }
 
+/* RESPOSIVIDADE */
+@media (max-width: 768px) {
 
+    /* Centraliza o conteúdo da seção 1 e remove margens laterais */
+    .secao1 h2,
+    .secao1 p {
+        margin-left: 0;
+        padding: 0 20px;
+        /* Adiciona um respiro nas laterais */
+        text-align: center;
+        font-size: 28px;
+        /* Ajusta o tamanho da fonte do título */
+    }
 
+    .secao1 {
+        margin-top: -25px;
+    }
+
+    .secao1 p {
+        font-size: medium;
+        /* Ajusta o tamanho da fonte do parágrafo */
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Remove o deslocamento da seção 2 para que ela fique abaixo da seção 1 */
+    .secao2 {
+        margin-left: 0;
+        margin-top: 40px;
+        /* Adiciona um espaço entre as seções */
+    }
+
+    .secao2 p {
+        text-align: center;
+    }
+
+    /* Faz os itens do container ficarem em coluna (um embaixo do outro) */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        /* Centraliza os itens na coluna */
+        gap: 2rem;
+        /* Adiciona um espaço entre os itens empilhados */
+    }
+
+    .container div {
+        margin-right: 0;
+        /* Remove a margem lateral que não é mais necessária */
+        align-items: center;
+        /* Centraliza o conteúdo de cada item */
+        margin-bottom: -15px;
+    }
+
+    /* Remove a margem do container dentro da seção 2 */
+    .secao2 .container {
+        margin-left: 0;
+    }
+}

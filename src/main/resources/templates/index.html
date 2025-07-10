@@ -15,7 +15,7 @@
 <body>
     <header>
         <a href="index.html"><img class="logo-topo" src="assets/logo.jpg" alt="gestao-facil"></a>
-       
+
         <nav class="nav-bar">
             <ul>
                 <li><a href="index.html" th:href="@{/index}">Início</a></li>
@@ -85,46 +85,47 @@
 
         <details>
             <summary>
-                <p>Posso usar o sistema gratuitamente?<i id="p1" class="bi bi-plus-lg"></i></p> 
+                <p>Posso usar o sistema gratuitamente?<i id="p1" class="bi bi-plus-lg"></i></p>
             </summary>
-                Sim! O sistema é totalmente gratuito, sem custos ocultos.
+            Sim! O sistema é totalmente gratuito, sem custos ocultos.
         </details>
 
         <details>
             <summary>
                 <p>Meus dados estão seguros?<i id="p1" class="bi bi-plus-lg"></i></p>
             </summary>
-                Utilizamos boas práticas de segurança e garantimos a conformidade de suas informações.
+            Utilizamos boas práticas de segurança e garantimos a conformidade de suas informações.
         </details>
 
         <details>
             <summary>
                 <p>Posso acessar minha conta de qualquer dispositivo?<i id="p1" class="bi bi-plus-lg"></i></p>
             </summary>
-                Sim, nosso sistema é responsivo e funciona em qualquer dispositivo.
+            Sim, nosso sistema é responsivo e funciona em qualquer dispositivo.
         </details>
 
         <details>
             <summary>
-                <p>Como são gerados os gráficos de finanças?<i id="p1" class="bi bi-plus-lg"></i></p> 
+                <p>Como são gerados os gráficos de finanças?<i id="p1" class="bi bi-plus-lg"></i></p>
             </summary>
-                Os gráficos são gerados instantaneamente após você inserir valores.
+            Os gráficos são gerados instantaneamente após você inserir valores.
         </details>
 
         <details>
             <summary>
                 <p>Como o sistema me ajuda a controlar minhas finanças?<i id="p1" class="bi bi-plus-lg"></i></p>
             </summary>
-                Você registra receitas e despesas; o sistema mostra visualmente como estão suas finanças.
+            Você registra receitas e despesas; o sistema mostra visualmente como estão suas finanças.
         </details>
     </section>
-    
-    
+
+
 
     <footer>
 
         <div class="redes">
-            <a href="https://github.com/AirtonBBarbosa/projeto-final-web" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://github.com/AirtonBBarbosa/projeto-final-web" target="_blank"><i
+                    class="bi bi-github"></i></a>
             <a href="mailto:airtonbbarbosadev@gmail.com" target="_blank"><i class="bi bi-envelope-fill"></i></a>
             <a href="https://www.linkedin.com/company/linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
         </div>
@@ -141,8 +142,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    
+
     <script th:src="@{/js/script.js}" src="../static/js/script.js"></script>
+
+    <!-- SCRIPT MENU TOGGLE -->
+    <script>
+        // Espera o documento carregar para executar o script
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            const navBar = document.querySelector('.nav-bar');
+            const navLogin = document.querySelector('.navbar-login');
+
+            // Cria o botão do menu dinamicamente
+            const menuToggleButton = document.createElement('button');
+            menuToggleButton.classList.add('menu-toggle');
+            menuToggleButton.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+
+            // Insere o botão no cabeçalho (depois do logo)
+            header.insertBefore(menuToggleButton, navBar);
+
+            // Adiciona o evento de clique ao botão
+            menuToggleButton.addEventListener('click', function () {
+                // Adiciona/remove a classe 'active' para mostrar/esconder o menu
+                navBar.classList.toggle('active');
+                navLogin.classList.toggle('active');
+                this.classList.toggle('active'); // Anima o botão para 'X'
+            });
+        });
+    </script>
 
 </body>
 

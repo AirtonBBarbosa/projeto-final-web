@@ -1,4 +1,3 @@
-
 header {
     display: flex;
 }
@@ -81,4 +80,171 @@ header {
 .navbar-login .btn-conta:hover {
     color: white;
 }
+
 /*FIM*/
+
+/* --- Estilização básica do botão toggle --- */
+.menu-toggle {
+    display: none;
+    /* só aparece em mobile */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 15px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+    /* O botão do menu (hamburger) - escondido por padrão */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    /* Mostra o botão do menu */
+    .menu-toggle {
+        display: block;
+        margin-left: 350px;
+    }
+
+    /* Esconde os menus de navegação por padrão */
+    .nav-bar,
+    .navbar-login {
+        display: none;
+        width: 100%;
+        height: auto;
+        /* Ocupa toda a largura */
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .navbar-login {
+        margin-top: -45px;
+    }
+
+    .nav-bar ul,
+    .navbar-login ul {
+        flex-direction: column;
+        /* Menus em coluna */
+        width: 100%;
+        align-items: center;
+    }
+
+
+    .nav-bar li {
+        width: auto;
+        margin-bottom: -210px;
+        height: 95px;
+    }
+
+    /* LINKS BUGADOS VOLTAM A FUNCIONAR POR CAUSA DISSO */
+    .nav-bar li a {
+        position: relative;
+    }
+
+    .nav-bar ul {
+        height: 25px;
+    }
+
+    .navbar-login ul {
+        margin-top: 130px;
+        height: 90px;
+    }
+
+    .navbar-login li {
+        width: auto;
+        margin-bottom: -60px;
+    }
+
+
+
+    .navbar-login .btn-conta,
+    .navbar-login .btn-conta:visited {
+        background-color: transparent;
+        color: black;
+        border: none;
+    }
+
+    .navbar-login .btn-conta:hover {
+        color: #656ED8;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+
+    /* Quando o menu está ativo, ele aparece */
+    .nav-bar.active,
+    .navbar-login.active {
+        display: flex;
+        margin-left: -10px;
+        max-height: 300px;
+        margin-bottom: -90px;
+        /* Altura suficiente para os itens */
+    }
+
+    /* Animação do botão hamburger para um 'X' */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .logo-topo {
+        display: flex;
+        justify-self: center;
+    }
+
+}
