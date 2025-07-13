@@ -19,10 +19,10 @@
 
         <nav class="nav-bar">
             <ul>
-                <li><a href="geral.html">visão geral</a></li>
-                <li><a href="historico.html">histórico</a></li>
-                <li><a href="graficos.html" th:href="@{/graficos}">gráficos</a></li>
-                <li><a href="relatorios.html">relátorios</a></li>
+                <li><a href="geral.html" th:href="@{/geral}">visão geral</a></li>
+                <li><a href="historico.html" th:href="@{/historico}">histórico</a></li>
+                <li><a href="graficos.html">gráficos</a></li>
+                <li><a href="relatorios.html" th:href="@{/relatorios}">relátorios</a></li>
             </ul>
         </nav>
 
@@ -132,7 +132,7 @@
 
     <!-- SESSION STORAGE -->
     <script>
-        document.getElementById('graficoForm').addEventListener('submit', function(event) {
+        document.getElementById('graficoForm').addEventListener('submit', function (event) {
             // Previne o recarregamento da página
             event.preventDefault();
 
@@ -145,9 +145,34 @@
             sessionStorage.setItem('demoChartName', chartName);
             sessionStorage.setItem('demoChartValue', chartValue);
             sessionStorage.setItem('demoChartType', chartType);
-            
+
             // Redireciona para a página do gráfico
             window.location.href = 'graficos.html';
+        });
+    </script>
+
+    <!-- SCRIPT TOGGLE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            // Seleciona todos os elementos de navegação que devem ser parte do menu
+            const navElements = document.querySelectorAll('.nav-bar, .navbar-conta');
+            const menuToggleButton = document.createElement('button');
+
+            menuToggleButton.classList.add('menu-toggle');
+            menuToggleButton.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+
+            // Adiciona o botão ao final do header
+            header.appendChild(menuToggleButton);
+
+            // Adiciona o evento de clique ao botão
+            menuToggleButton.addEventListener('click', function () {
+                this.classList.toggle('active');
+                // Adiciona/remove a classe 'active' de todos os elementos do menu
+                navElements.forEach(function (nav) {
+                    nav.classList.toggle('active');
+                });
+            });
         });
     </script>
 

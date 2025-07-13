@@ -23,16 +23,16 @@ import jakarta.validation.Valid;
 public class Controlador {
 
 	@Autowired
-	private UsuarioRepository ur; //Objeto Usuário
+	private UsuarioRepository ur; // Objeto Usuário
 
 	@GetMapping("/")
-    public String home() {
-        return "redirect:/index";
-    }
+	public String home() {
+		return "redirect:/index";
+	}
 
 	@GetMapping("/index")
 	public String index(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
-		model.addAttribute("nome", CookieServico.getCookie(request, "nomeUsuario"));
+		model.addAttribute("email", CookieServico.getCookie(request, "emailUsuario"));
 		return "index";
 	}
 
@@ -52,18 +52,18 @@ public class Controlador {
 	}
 
 	@PostMapping("/logar")
-	public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) throws UnsupportedEncodingException {
+	public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response)
+			throws UnsupportedEncodingException {
 		Usuario usuariologado = this.ur.login(usuario.getEmail(), usuario.getSenha());
-		if(usuariologado != null) {
-			CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuariologado.getId()), 100000000);
-			CookieServico.setCookie(response, "nomeUsuario", String.valueOf(usuariologado.getEmail()), 3600);
+		if (usuariologado != null) {
+			CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuariologado.getId()), 3600);
+			CookieServico.setCookie(response, "emailUsuario", String.valueOf(usuariologado.getEmail()), 3600);
 			return "redirect:/geral";
 		}
 
 		model.addAttribute("erro", "Usuário Inválido");
 		return "/login";
 	}
-	
 
 	@GetMapping("/cadastro")
 	public String cadastro() {
@@ -72,26 +72,42 @@ public class Controlador {
 
 	@GetMapping("/geral")
 	public String geral(HttpServletRequest request) throws UnsupportedEncodingException {
-		//DESATIVADO POR ENQUANTO PARA TESTES, ESSA FUNÇÃO BLOQUEIA A ROTA E REDIRECIONA PARA O LOGIN
-		//String id = CookieServico.getCookie(request, "UsuarioId");
-   		// if (id == null) {
-        // // // cookie não existe ou já expirou: força login
-        // return "redirect:/login";
-    	//  }
+		// DESATIVADO POR ENQUANTO PARA TESTES, ESSA FUNÇÃO BLOQUEIA A ROTA E
+		// REDIRECIONA PARA O LOGIN
+		String id = CookieServico.getCookie(request, "UsuarioId");
+		if (id == null) {
+			// cookie não existe ou já expirou: força login
+			return "redirect:/login";
+		}
 
 		return "geral";
 	}
 
 	@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
-	public String cadastroUsuario(@Valid Usuario usuario, BindingResult result) {
+	public String cadastroUsuario(@Valid Usuario usuario, BindingResult result, HttpServletResponse response)
+			throws UnsupportedEncodingException {
 
-		if(result.hasErrors()){
+		if (result.hasErrors()) {
 			return "redirect:/cadastro";
 		}
 
-		ur.save(usuario);
+		Usuario usuarioSalvo = ur.save(usuario);
 
-		return "redirect:/login";
+		CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuarioSalvo.getId()), 100000000);
+
+		CookieServico.setCookie(response, "emailUsuario", String.valueOf(usuarioSalvo.getEmail()), 3600);
+
+		return "redirect:/geral";
+	}
+
+	@GetMapping("/relatorios")
+	public String relatorios() {
+		return "relatorios";
+	}
+
+	@GetMapping("/historico")
+	public String historico() {
+		return "historico";
 	}
 
 }

@@ -15,7 +15,7 @@
 body {
     background-color: #EEEEEE;
     overflow-x: hidden;
-    
+
 }
 
 /*HEADER E NAVBAR's*/
@@ -48,13 +48,16 @@ header a img {
 .nav-bar a {
     text-decoration: none;
     color: white;
-    padding-bottom: 5px; /* Espaço para a linha */
+    padding-bottom: 5px;
+    /* Espaço para a linha */
     transition: border 0.3s;
-    border-bottom: 2px solid transparent; /* invisível por padrão */
+    border-bottom: 2px solid transparent;
+    /* invisível por padrão */
 }
 
 .nav-bar a:hover {
-    border-bottom: 2px solid white; /* Aparece no hover */
+    border-bottom: 2px solid white;
+    /* Aparece no hover */
 }
 
 .navbar-conta {
@@ -215,8 +218,8 @@ nav img {
 .infos-gerais2 h3 {
     font-weight: 400;
     margin-top: -35px;
-    margin-left: 100px;  
-    font-size: 25px; 
+    margin-left: 100px;
+    font-size: 25px;
 }
 
 .infos-gerais2 img {
@@ -228,8 +231,8 @@ nav img {
 
 /* MODAL*/
 
-dialog::backdrop { 
-    background-color: rgba(0,0,0,0.5);
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 dialog {
@@ -247,7 +250,7 @@ dialog {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 30px;    
+    gap: 30px;
     align-items: center;
     margin-bottom: 15px;
 }
@@ -305,14 +308,14 @@ dialog {
     border: none;
     padding: 5px 8px;
     margin-top: 25px;
-    
+
 }
 
 /* esconde as setas */
 .modal-body input[type=number]::-webkit-inner-spin-button,
 .modal-body input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .modal-body input:focus {
@@ -352,4 +355,285 @@ dialog {
 
 #save-button:hover {
     border: 2px solid #000a77;
+}
+
+/* --- Estilos do Toggle e Responsividade --- */
+
+/* Oculta a versão de texto "Conta" no desktop */
+header nav:nth-of-type(3) {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    /* Escondido no desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: -40px;
+    margin-right: -320px;
+    /* Garante que o botão fique acima do menu */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    /* Barras brancas para contrastar com o header */
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media Query para telas menores (ex: celulares e tablets) */
+@media (max-width: 768px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Mostra o botão do menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Esconde a versão de ícone "Conta" no mobile */
+    header nav:nth-of-type(2) {
+        display: none;
+    }
+
+    /* Estilos do menu que será aberto */
+    .nav-bar,
+    .navbar-conta {
+        position: absolute;
+        top: 108px;
+        /* Começa logo abaixo do header */
+        /* Animação com transform e opacity */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        background-color: #656ED8;
+        width: 100%;
+        /* Ajustes para o layout do menu em coluna */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    .nav-bar ul,
+    .navbar-conta ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    .nav-bar li,
+    .navbar-conta li {
+        width: 100%;
+        margin-left: -28px;
+    }
+
+    /* Garante que o clique nos links funcione */
+    .nav-bar li a,
+    .navbar-conta li {
+        position: relative;
+        padding: 15px 25px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Garante que o padding não aumente a largura */
+        color: white;
+    }
+
+    .nav-bar li a:hover {
+        border-bottom: none;
+    }
+
+    /* Quando o menu está ativo, ele aparece */
+    .nav-bar.active,
+    .navbar-conta.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Animação do botão hamburger para um 'X' */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    header a img {
+        margin-left: 25px;
+        margin-top: 0;
+    }
+
+    body,
+    html {
+        background-color: white;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .secao2 {
+        display: none;
+    }
+
+    .dashboard img {
+        display: none;
+    }
+
+    .dashboard {
+        margin-left: -20px;
+        margin-top: 20px;
+        align-self: center;
+        background-color: transparent;
+    }
+
+    .dashboard2 h2 {
+        /* display: flex;
+    justify-content: flex-end; */
+        margin-right: 110px;
+        margin-top: -90px;
+        font-size: 23px;
+    }
+
+    dialog {
+        justify-self: center;
+        width: 100%;
+        height: 380px;
+        margin-top: 140px;
+    }
+
+    /*posicionamento do botão de fechar*/
+    .btn-close-modal button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 28px;
+        margin-top: -180px;
+        margin-right: 10px;
+    }
+
+    .btn-close-modal button:hover {
+        color: #e96464;
+    }
+
+    /* Centraliza o cabeçalho e ajusta o layout para empilhamento vertical */
+    .modal-header {
+        display: flex;
+        flex-direction: column;
+        /* Itens um embaixo do outro */
+        align-items: center;
+        gap: 10px;
+        /* Reduz o espaçamento */
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .modal-header input {
+        width: 80%;
+        /* De 500px para 90% para caber no modal */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 8px;
+        text-align: center;
+    }
+
+    /* Corpo do modal agora empilha os itens verticalmente */
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        /* A mudança mais importante! */
+        align-items: center;
+        /* Centraliza tudo na vertical */
+        gap: 15px;
+        /* Espaço entre os itens da coluna */
+        padding: 0 15px;
+        /* Adiciona um respiro nas laterais */
+    }
+
+    /* Ajusta todos os campos de formulário no corpo do modal */
+    .modal-body input,
+    .modal-body select {
+        width: 90%;
+        /* Largura flexível para todos */
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 8px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Remove margens desnecessárias que podem quebrar o layout */
+    .modal-body input,
+    .modal-body label,
+    .modal-body select {
+        margin-top: 0;
+    }
+
+    .modal-body label {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* Centraliza o botão Salvar e remove a margem que o jogava para fora */
+    #save-button {
+        margin-left: 18px;
+        /* Remove a margem fixa */
+        margin-top: 25px;
+        /* Ajusta o espaçamento superior */
+        background-color: white;
+        color: #656ED8;
+        border: none;
+        border-radius: 8px;
+        width: 90%;
+        /* Largura flexível */
+        height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #save-button:hover {
+        background-color: #000a77;
+        color: white;
+        opacity: 0.9;
+    }
+
+
+    /* --- ESTILOS DE FOCO UNIFICADOS (OPCIONAL) --- */
+    .modal-header input:focus,
+    .modal-body input:focus,
+    .modal-body select:focus {
+        outline: none;
+        border-color: #000a77;
+        box-shadow: 0 0 5px rgba(0, 10, 119, 0.5);
+    }
 }
