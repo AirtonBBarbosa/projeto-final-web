@@ -12,15 +12,12 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	// @NotEmpty
-	// private String nome; Não usado no momento
-	
+
 	@NotEmpty
 	private String email;
-	
+
 	@NotEmpty
-	private String senha; //senha não está criptografada
+	private String senha; // senha não está criptografada
 
 	public long getId() {
 		return id;
@@ -41,5 +38,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 }

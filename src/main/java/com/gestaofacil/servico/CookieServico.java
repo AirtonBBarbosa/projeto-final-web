@@ -11,8 +11,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class CookieServico {
-    
-    public static void setCookie(HttpServletResponse response, String key, String valor, int segungos) throws UnsupportedEncodingException {
+
+    public static void setCookie(HttpServletResponse response, String key, String valor, int segungos)
+            throws UnsupportedEncodingException {
         Cookie cookie = new Cookie(key, URLEncoder.encode(valor, "UTF-8"));
         cookie.setMaxAge(segungos);
         response.addCookie(cookie);
@@ -20,19 +21,16 @@ public class CookieServico {
 
     public static String getCookie(HttpServletRequest request, String key) throws UnsupportedEncodingException {
         String valor = Optional.ofNullable(request.getCookies()).flatMap(cookies -> Arrays.stream(cookies)
-        .filter(cookie -> key.equals(cookie.getName()))
-        .findAny()
-        ).map(e -> e.getValue())
-        .orElse(null);
+                .filter(cookie -> key.equals(cookie.getName()))
+                .findAny()).map(e -> e.getValue())
+                .orElse(null);
 
         if (valor != null) {
             valor = URLDecoder.decode(valor, "UTF-8");
             return valor;
         }
-        
+
         return valor;
 
     }
 }
-
-

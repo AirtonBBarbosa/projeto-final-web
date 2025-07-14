@@ -454,7 +454,6 @@ header nav:nth-of-type(3) {
         padding: 15px 25px;
         width: 100%;
         box-sizing: border-box;
-        /* Garante que o padding não aumente a largura */
         color: white;
     }
 
@@ -462,7 +461,6 @@ header nav:nth-of-type(3) {
         border-bottom: none;
     }
 
-    /* Quando o menu está ativo, ele aparece */
     .nav-bar.active,
     .navbar-conta.active {
         opacity: 1;
@@ -511,8 +509,6 @@ header nav:nth-of-type(3) {
     }
 
     .dashboard2 h2 {
-        /* display: flex;
-    justify-content: flex-end; */
         margin-right: 110px;
         margin-top: -90px;
         font-size: 23px;
@@ -540,7 +536,6 @@ header nav:nth-of-type(3) {
         color: #e96464;
     }
 
-    /* Centraliza o cabeçalho e ajusta o layout para empilhamento vertical */
     .modal-header {
         display: flex;
         flex-direction: column;
@@ -559,7 +554,6 @@ header nav:nth-of-type(3) {
 
     .modal-header input {
         width: 80%;
-        /* De 500px para 90% para caber no modal */
         border: 1px solid #ccc;
         border-radius: 8px;
         padding: 8px;
@@ -570,20 +564,15 @@ header nav:nth-of-type(3) {
     .modal-body {
         display: flex;
         flex-direction: column;
-        /* A mudança mais importante! */
         align-items: center;
-        /* Centraliza tudo na vertical */
         gap: 15px;
-        /* Espaço entre os itens da coluna */
         padding: 0 15px;
-        /* Adiciona um respiro nas laterais */
     }
 
     /* Ajusta todos os campos de formulário no corpo do modal */
     .modal-body input,
     .modal-body select {
         width: 90%;
-        /* Largura flexível para todos */
         border-radius: 8px;
         border: 1px solid #ccc;
         padding: 8px;
@@ -591,7 +580,6 @@ header nav:nth-of-type(3) {
         text-align: center;
     }
 
-    /* Remove margens desnecessárias que podem quebrar o layout */
     .modal-body input,
     .modal-body label,
     .modal-body select {
@@ -603,18 +591,14 @@ header nav:nth-of-type(3) {
         font-weight: 500;
     }
 
-    /* Centraliza o botão Salvar e remove a margem que o jogava para fora */
     #save-button {
         margin-left: 18px;
-        /* Remove a margem fixa */
         margin-top: 25px;
-        /* Ajusta o espaçamento superior */
         background-color: white;
         color: #656ED8;
         border: none;
         border-radius: 8px;
         width: 90%;
-        /* Largura flexível */
         height: 40px;
         font-size: 16px;
         font-weight: bold;
@@ -628,7 +612,6 @@ header nav:nth-of-type(3) {
     }
 
 
-    /* --- ESTILOS DE FOCO UNIFICADOS (OPCIONAL) --- */
     .modal-header input:focus,
     .modal-body input:focus,
     .modal-body select:focus {

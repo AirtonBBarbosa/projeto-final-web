@@ -62,7 +62,7 @@
     display: flex;
     margin-left: 750px;
     margin-top: -1.2rem;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 
@@ -124,7 +124,6 @@ details[open] summary {
     .secao3 {
         height: auto;
         padding: 0 20px;
-        /* Adiciona um respiro nas laterais */
         margin-top: 20px;
     }
 
@@ -133,11 +132,11 @@ details[open] summary {
         display: none;
         /*margin-left: 0;
         margin-top: 0;
-        text-align: end; Centraliza o texto para um melhor visual
-        margin-bottom: 80px; /* Adiciona um espaço antes do acordeão */
+        text-align: end; 
+        margin-bottom: 80px;*/
     }
 
-    /* Faz o acordeão ocupar 100% da largura da tela */
+
     details {
         width: 100%;
         margin-top: 20px;
@@ -149,7 +148,7 @@ details[open] summary {
         margin-top: 10px;
     }
 
-    /* Ajusta o espaçamento interno do acordeão quando aberto */
+
     details[open] summary {
         margin-bottom: 0.1em;
     }

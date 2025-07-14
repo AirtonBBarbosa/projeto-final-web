@@ -1,6 +1,6 @@
 /*INICIO*/
 footer {
-    justify-items: center;   
+    justify-items: center;
     margin-top: 220px;
 }
 
@@ -21,7 +21,7 @@ footer p {
 }
 
 .redes a:hover {
-    color: #656ED8; /
+    color: #656ED8;/
 }
 
 .leis {
@@ -49,7 +49,7 @@ footer p {
     .leis {
         margin-right: 50px;
         margin-top: -70px;
-    }   
+    }
 
     footer p {
         margin-top: 45px;

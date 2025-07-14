@@ -107,7 +107,7 @@
             const newTipoSelect = document.getElementById('newTipo');
 
             if (newValueInput.value) {
-                let finalLabel; // Usamos 'let' para poder modificar a variável
+                let finalLabel;
 
                 // VERIFICA SE A DESCRIÇÃO FOI PREENCHIDA
                 if (newLabelInput.value) {
@@ -155,7 +155,7 @@
             dialog.close();
         }
 
-        // 3. TODA A LÓGICA RODA DENTRO DESTE EVENTO
+        // LÓGICA DE CRIAÇÃO DO CHART
         window.addEventListener('DOMContentLoaded', () => {
             // Busca os dados que o formulário salvou
             const chartName = sessionStorage.getItem('demoChartName') || 'Meu Gráfico';
@@ -192,7 +192,6 @@
 
             // Adiciona funcionalidade aos botões
             document.getElementById('addValueBtn').addEventListener('click', addData);
-
             document.getElementById('editTitleBtn').addEventListener('click', openEditModal);
             document.querySelector('.close-modal').addEventListener('click', closeModal);
             document.getElementById('graficoForm').addEventListener('submit', saveChartTitle);
@@ -209,10 +208,10 @@
             // Seleciona todos os elementos de navegação que devem ser parte do menu
             const navElements = document.querySelectorAll('.nav-bar, .navbar-conta');
             const menuToggleButton = document.createElement('button');
-            
+
             menuToggleButton.classList.add('menu-toggle');
             menuToggleButton.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
-            
+
             // Adiciona o botão ao final do header
             header.appendChild(menuToggleButton);
 
@@ -220,7 +219,7 @@
             menuToggleButton.addEventListener('click', function () {
                 this.classList.toggle('active');
                 // Adiciona/remove a classe 'active' de todos os elementos do menu
-                navElements.forEach(function(nav) {
+                navElements.forEach(function (nav) {
                     nav.classList.toggle('active');
                 });
             });

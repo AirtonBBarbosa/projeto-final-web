@@ -10,57 +10,57 @@
 // @Entity
 // public class Charts {
 
-//     @Id
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long id;
+// @Id
+// @GeneratedValue(strategy = GenerationType.IDENTITY)
+// private Long id;
 
-//     @NotEmpty
-//     private String name;
+// @NotEmpty
+// private String name;
 
-//     @NotNull
-//     private Double value;
+// @NotNull
+// private Double value;
 
-//     @NotEmpty
-//     private String tipo;
+// @NotEmpty
+// private String tipo;
 
-//     public Charts() {
-        
-//     }
+// public Charts() {
 
-//     public Charts(String name, Double value) {
-//         this.name = name;
-//         this.value = value;
-//     }
+// }
 
-//     public String getTipo() {
-//         return tipo;
-//     }
+// public Charts(String name, Double value) {
+// this.name = name;
+// this.value = value;
+// }
 
-//     public void setTipo(String tipo) {
-//         this.tipo = tipo;
-//     }
+// public String getTipo() {
+// return tipo;
+// }
 
-//     public Long getId() {
-//         return id;
-//     }
+// public void setTipo(String tipo) {
+// this.tipo = tipo;
+// }
 
-//     public void setId(Long id) {
-//         this.id = id;
-//     }
+// public Long getId() {
+// return id;
+// }
 
-//     public String getName() {
-//         return name;
-//     }
+// public void setId(Long id) {
+// this.id = id;
+// }
 
-//     public void setName(String name) {
-//         this.name = name;
-//     }
+// public String getName() {
+// return name;
+// }
 
-//     public Double getValue() {
-//         return value;
-//     }
+// public void setName(String name) {
+// this.name = name;
+// }
 
-//     public void setValue(Double value) {
-//         this.value = value;
-//     }
+// public Double getValue() {
+// return value;
+// }
+
+// public void setValue(Double value) {
+// this.value = value;
+// }
 // }

@@ -72,8 +72,7 @@ public class Controlador {
 
 	@GetMapping("/geral")
 	public String geral(HttpServletRequest request) throws UnsupportedEncodingException {
-		// DESATIVADO POR ENQUANTO PARA TESTES, ESSA FUNÇÃO BLOQUEIA A ROTA E
-		// REDIRECIONA PARA O LOGIN
+		// BLOQUEIA A ROTA E REDIRECIONA PARA O LOGIN
 		String id = CookieServico.getCookie(request, "UsuarioId");
 		if (id == null) {
 			// cookie não existe ou já expirou: força login
@@ -93,7 +92,7 @@ public class Controlador {
 
 		Usuario usuarioSalvo = ur.save(usuario);
 
-		CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuarioSalvo.getId()), 100000000);
+		CookieServico.setCookie(response, "UsuarioId", String.valueOf(usuarioSalvo.getId()), 3600);
 
 		CookieServico.setCookie(response, "emailUsuario", String.valueOf(usuarioSalvo.getEmail()), 3600);
 
@@ -101,12 +100,26 @@ public class Controlador {
 	}
 
 	@GetMapping("/relatorios")
-	public String relatorios() {
+	public String relatorios(HttpServletRequest request) throws UnsupportedEncodingException {
+		// BLOQUEIA A ROTA E REDIRECIONA PARA O LOGIN
+		String id = CookieServico.getCookie(request, "UsuarioId");
+		if (id == null) {
+			// cookie não existe ou já expirou: força login
+			return "redirect:/login";
+		}
+
 		return "relatorios";
 	}
 
 	@GetMapping("/historico")
-	public String historico() {
+	public String historico(HttpServletRequest request) throws UnsupportedEncodingException {
+		// BLOQUEIA A ROTA E REDIRECIONA PARA O LOGIN
+		String id = CookieServico.getCookie(request, "UsuarioId");
+		if (id == null) {
+			// cookie não existe ou já expirou: força login
+			return "redirect:/login";
+		}
+
 		return "historico";
 	}
 

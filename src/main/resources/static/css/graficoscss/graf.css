@@ -133,9 +133,7 @@ dialog #save-button {
     /* Torna o contêiner do gráfico flexível */
     .chart-container {
         width: 95%;
-        /* Usa 95% da largura da tela */
         height: 400px;
-        /* Deixa a altura se ajustar para manter a proporção */
         margin-top: 10px;
     }
 
@@ -151,19 +149,16 @@ dialog #save-button {
 
     h1 {
         font-size: 24px;
-        /* Reduz um pouco a fonte do título */
     }
 
     /* Empilha os controles do formulário */
     .controls {
         flex-direction: column;
         align-items: center;
-        /* Centraliza o conjunto de controles */
         gap: 20px;
         margin-top: -10px;
     }
 
-    /* Garante que os grupos de formulário também se alinhem bem */
     .form-group {
         display: flex;
         flex-direction: column;
@@ -171,7 +166,6 @@ dialog #save-button {
         gap: 8px;
     }
 
-    /* Garante que o link de voltar tenha um espaçamento adequado */
     #voltar {
         display: block;
         text-align: center;
@@ -179,7 +173,6 @@ dialog #save-button {
         padding-bottom: 20px;
     }
 
-    /* Ajustes para o modal dentro desta página */
     dialog .modal-header {
         margin-top: 30px;
         gap: 15px;
@@ -187,13 +180,11 @@ dialog #save-button {
 
     dialog .modal-header input {
         width: 90%;
-        /* Garante que o input do modal também seja responsivo */
     }
 
     dialog .btn-close-modal {
         margin-top: -10px;
-        /* Ajusta o botão de fechar */
-        
+
     }
 
     dialog #save-button {

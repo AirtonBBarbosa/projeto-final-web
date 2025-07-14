@@ -12,8 +12,8 @@ public class LoginIntercepConfig implements WebMvcConfigurer {
     private LoginInterceptador loginintercepador;
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {  //excessões que não irão considerar cookie
+    public void addInterceptors(InterceptorRegistry registry) { // excessões que não irão considerar cookie
         registry.addInterceptor(loginintercepador).excludePathPatterns(
-            "/login", "/logar", "/erro", "/cadastro");
+                "/login", "/logar", "/cadastro");
     }
 }

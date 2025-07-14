@@ -153,13 +153,11 @@ header {
         margin-left: 350px;
     }
 
-    /* Esconde os menus de navegação por padrão */
     .nav-bar,
     .navbar-login {
         display: none;
         width: 100%;
         height: auto;
-        /* Ocupa toda a largura */
         text-align: center;
         max-height: 0;
         overflow: hidden;
@@ -225,7 +223,6 @@ header {
         margin-left: -10px;
         max-height: 300px;
         margin-bottom: -90px;
-        /* Altura suficiente para os itens */
     }
 
     /* Animação do botão hamburger para um 'X' */
