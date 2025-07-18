@@ -31,12 +31,13 @@
 @media (max-width: 768px) {
 
     .secao1 {
-        margin-left: -20px;
+        padding-left: 0;
+        padding-right: 40px;
     }
 
     .secao1 h2 {
         margin-top: 55px;
-        margin-left: 95px;
+        margin-left: 80px;
         font-size: 25px;
     }
 

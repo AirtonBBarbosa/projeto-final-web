@@ -150,7 +150,8 @@ header {
     /* Mostra o botão do menu */
     .menu-toggle {
         display: block;
-        margin-left: 350px;
+        margin-left: auto;
+        padding-right: 40px;
     }
 
 
@@ -242,7 +243,7 @@ header {
 
     .logo-topo {
         display: flex;
-        justify-self: center;
+        margin: 0 auto;
     }
 
 }

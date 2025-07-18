@@ -1,7 +1,11 @@
 /*INICIO*/
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-items: center;
     margin-top: 220px;
+    height: auto;
 }
 
 footer p {
@@ -13,6 +17,7 @@ footer p {
 .redes {
     display: flex;
     gap: 20px;
+    margin-bottom: 2px;
 }
 
 .redes a {
@@ -28,8 +33,9 @@ footer p {
     display: flex;
     gap: 20px;
     float: inline-end;
-    margin-right: 20px;
     margin-top: -45px;
+    margin-bottom: 5px;
+    margin-top: -2px;
 }
 
 .leis a {
@@ -47,7 +53,6 @@ footer p {
 /*RESPONSIVIDADE*/
 @media (max-width: 768px) {
     .leis {
-        margin-right: 50px;
         margin-top: -70px;
     }
 

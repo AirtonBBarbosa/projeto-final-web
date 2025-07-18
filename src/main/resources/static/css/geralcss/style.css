@@ -274,7 +274,7 @@ dialog {
 
 .btn-close-modal {
     display: flex;
-    justify-self: end;
+    justify-content: end;
     margin-right: 10px;
 }
 
@@ -316,6 +316,12 @@ dialog {
 .modal-body input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+/* Esconde as setas no Firefox */
+.modal-body input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield; /* Boa prática incluir a versão sem prefixo */
 }
 
 .modal-body input:focus {
@@ -504,13 +510,21 @@ header nav:nth-of-type(3) {
     .dashboard {
         margin-left: -20px;
         margin-top: 20px;
-        align-self: center;
+        text-align: justify;
         background-color: transparent;
     }
 
+    .dashboard2 {
+        display: flex;
+    justify-content: center; /* Centraliza os itens */
+    align-items: center;     /* Alinha verticalmente */
+    gap: 30px;       
+    }
+
     .dashboard2 h2 {
-        margin-right: 110px;
-        margin-top: -90px;
+        margin-right: 5px;  
+        /*margin-top: -90px; */
+        justify-items: center;
         font-size: 23px;
     }
 

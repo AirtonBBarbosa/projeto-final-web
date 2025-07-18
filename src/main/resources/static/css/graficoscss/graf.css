@@ -110,6 +110,12 @@ h1 {
     margin: 0;
 }
 
+/* Esconde as setas no Firefox */
+.form-group input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield; /* Boa prática incluir a versão sem prefixo */
+}
+
 dialog .modal-header {
     margin-top: 80px;
 }

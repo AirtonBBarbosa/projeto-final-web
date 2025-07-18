@@ -53,6 +53,9 @@
 /*SEÇÃO 3*/
 
 .secao3 {
+    display: flex;
+    flex-direction: column; /* Para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens na horizontal */
     justify-items: center;
     height: auto;
     margin-top: 40px;
@@ -115,6 +118,11 @@ details[open] summary {
         margin-top: -20px;
         margin-left: -20px;
         margin-bottom: -70px;
+    }
+    
+    .secao1 h2 {
+        display: flex;
+        justify-items: center;
     }
 
     .secao2 {
