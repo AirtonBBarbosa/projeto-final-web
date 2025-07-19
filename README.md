@@ -4,7 +4,7 @@ Um pequeno projeto criado para a matéria Desenvolvimento de Software para Web
 
 O site tem o propósito de ser um sistema de gerenciamento de finanças pessoais, por mais que mostre como seria sua execução o site não está em sua versão final.
 
-![1](https://github.com/AirtonBBarbosa/projeto-final-web/blob/main/src/main/resources/static/assets/index.png?raw=true)
+![1](https://github.com/AirtonBBarbosa/projeto-final-web/blob/main/src/main/resources/static/assets/index2.png?raw=true)
 
 # Tecnologias Utilizadas
 
