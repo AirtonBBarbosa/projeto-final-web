@@ -321,7 +321,8 @@ dialog {
 /* Esconde as setas no Firefox */
 .modal-body input[type=number] {
     -moz-appearance: textfield;
-    appearance: textfield; /* Boa prática incluir a versão sem prefixo */
+    appearance: textfield;
+    /* Boa prática incluir a versão sem prefixo */
 }
 
 .modal-body input:focus {
@@ -392,7 +393,7 @@ header nav:nth-of-type(3) {
     transition: all 0.3s ease-in-out;
 }
 
-/* Media Query para telas menores (ex: celulares e tablets) */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
 
     * {
@@ -508,21 +509,24 @@ header nav:nth-of-type(3) {
     }
 
     .dashboard {
-        margin-left: -20px;
-        margin-top: 20px;
-        text-align: justify;
-        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-left: -85px;
+        margin-top: 180px;
+        text-align: center;
     }
 
     .dashboard2 {
         display: flex;
-    justify-content: center; /* Centraliza os itens */
-    align-items: center;     /* Alinha verticalmente */
-    gap: 30px;       
+        justify-content: center;
+        align-items: center;
+        margin-top: -140px;
     }
 
     .dashboard2 h2 {
-        margin-right: 5px;  
+        margin-right: 5px;
         /*margin-top: -90px; */
         justify-items: center;
         font-size: 23px;
